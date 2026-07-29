@@ -1,0 +1,16 @@
+import HautevilleHouse.DustyGasTwoPhaseFlowsLemmaCanonicalLaneLean.DustyGasAnalyticCertificate
+
+namespace HautevilleHouse
+namespace DustyGasTwoPhaseFlowsLemmaCanonicalLaneLean
+
+def DustyGasAdmittedAnalyticClosure : Prop :=
+  DustyGasAnalyticCertificateClosed sourceDustyGasAnalyticCertificate ∧
+  ConstrainedTwoPhaseFlowsClosure sourceAdmissibleClass
+
+theorem dusty_gas_admitted_analytic_closure_checked :
+    DustyGasAdmittedAnalyticClosure := by
+  exact And.intro source_dusty_gas_analytic_certificate_closed
+    (constrained_two_phase_flows_endgame sourceAdmissibleClass)
+
+end DustyGasTwoPhaseFlowsLemmaCanonicalLaneLean
+end HautevilleHouse
